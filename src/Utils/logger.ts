@@ -10,4 +10,4 @@ export interface ILogger {
 	error(obj: unknown, msg?: string): void
 }
 
-export default P({ timestamp: () => `,"time":"${new Date().toJSON()}"` })
+export default P({ level: process.env.BAILEYS_LOG_LEVEL || 'silent', timestamp: () => `,"time":"${new Date().toJSON()}"` })
